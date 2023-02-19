@@ -137,7 +137,11 @@ public class HangmanGame : MonoBehaviour
         {
             foreach (var image in hpImage)
             {
-                image.SetActive(hpValue.ToString() == image.name);
+                //image.SetActive(hpValue.ToString() == image.name);
+                if (hpValue.ToString() == image.name)
+                {
+                    image.SetActive(true);
+                }
             }
         }
     }
