@@ -18,18 +18,28 @@ public class HangmanGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textField;
     [SerializeField] private int hp = 7;
     [SerializeField] private GameObject[] hpImage;
+    [SerializeField] private TextMeshProUGUI _descriptionWords;
     
     private List<char> guessedLetters = new List<char>();
     
     private List<char> wrongTriedLetter = new List<char>();
 
+    private string[] descriptionWords =
+    {
+        "They play football", 
+        "She says moo",
+        "She says meow",
+        "Cats catch her",
+        "Using this device people talk"
+    };
+
     private string[] words =
     {
         "Ball",
-        "Girl",
-        "Effect",
+        "Cow",
+        "Cat",
         "Mouse",
-        "Glitch"
+        "Telephone"
     };
 
     
@@ -43,7 +53,8 @@ public class HangmanGame : MonoBehaviour
         int randomIndex = Random.Range(0, words.Length);
         
         wordToGuess = words[randomIndex];
-        
+        _descriptionWords.text = descriptionWords[randomIndex];
+            
         string initialWord = "";
         for (int i = 0; i < wordToGuess.Length; i++)
         {
