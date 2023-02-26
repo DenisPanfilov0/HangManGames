@@ -1,20 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Letter : MonoBehaviour
+public class LetterManager : MonoBehaviour
 {   
     [SerializeField] private TextMeshProUGUI _guesedWord;
     [SerializeField] private GameObject letterClosure;
     [SerializeField] private TextMeshProUGUI _keyText;
 
-    private float countDown;  
+    private float _countDown;  
 
-    private KeyCode lastKeyPressed;
+    private KeyCode _lastKeyPressed;
 
     
     
@@ -25,15 +20,15 @@ public class Letter : MonoBehaviour
         if (e.isKey)
         {
 
-            if (e.keyCode != KeyCode.None && lastKeyPressed != e.keyCode)
+            if (e.keyCode != KeyCode.None && _lastKeyPressed != e.keyCode)
             {
-                lastKeyPressed = e.keyCode;
+                _lastKeyPressed = e.keyCode;
                 ProcessKey(e.keyCode);
             }
         }
     }
 
-    public void ProcessKey(KeyCode key)
+    private void ProcessKey(KeyCode key)
     {
         char pressedKeyString = key.ToString()[0];
 

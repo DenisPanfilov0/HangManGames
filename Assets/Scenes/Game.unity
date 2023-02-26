@@ -3276,8 +3276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpText: {fileID: 1288471462}
-  _textForScript: {fileID: 1844774264}
-  _textField: {fileID: 1583946178}
+  _textWordToGuess: {fileID: 1844774264}
+  _textWordInLetters: {fileID: 1583946178}
   hp: 7
   hpImage:
   - {fileID: 1699173194}
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   - {fileID: 1050898986}
   - {fileID: 1143922228}
   - {fileID: 607322893}
-  _descriptionWords: {fileID: 1278060440}
+  _textDescriptionWords: {fileID: 1278060440}
 --- !u!4 &545601351
 Transform:
   m_ObjectHideFlags: 0
